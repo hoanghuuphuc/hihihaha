@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en" th:replace="~{/site/index :: dynamic(~{::main})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="details-section" th:fragment="main">
+    <section>
+        <div class="section_content">
+            <h1>Khóa Học Của Tôi</h1>
+            <span>Các khóa học mà bạn đã tham gia !</span>
+        </div>
+        <div class="section_cards">
+            <div class="section_card" th:each="p:${mycrouse}">
+                <div class="section_card-container">
+                    <img th:src="@{|/image/${p.courseor.tps_image}|}" alt="" />
+                    <div class="section_card-content">
+                        <a class="hide" th:href="@{|/learning/${p.courseor.tps_id}|}">Tiếp Tục Học</a>
+                    </div>
+                </div>
+                <p th:text="${p.courseor.tps_Name}"></p>
+            </div>
+
+
+
+
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
